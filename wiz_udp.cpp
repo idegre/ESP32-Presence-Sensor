@@ -17,6 +17,8 @@ const char* targetLights[] = LIGHTS_ARRAY;
 const int arraySize = sizeof(targetLights) / sizeof(targetLights[0]);
 StaticJsonDocument<300> doc;
 
+const byte networkRange = NETWORKRANGE
+
 byte *ipArr = (byte*)malloc(sizeof(byte)*arraySize);
 
 int isTargetLight(const char* target) {
@@ -35,7 +37,7 @@ void setupUDP() {
 void peopleInInterrupt() {
   if(lightState == 0) {
     for(int i = 0; i < arraySize; i++) {
-      udp.beginPacket(IPAddress(192,168,1,ipArr[i]), localPort);
+      udp.beginPacket(IPAddress(192,168,networkRange,ipArr[i]), localPort);
       udp.print(onString);
       udp.endPacket();
     }

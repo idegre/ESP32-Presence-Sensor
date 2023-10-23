@@ -18,8 +18,11 @@ This is code for the ESP32-CAM that implemements the use of the ld... radar in o
 #define WIFI_SSID "your ssid"
 #define WIFIPASS "your password"
 #define WIFINAME "Presence Sensor"
+#define NETWORKRANGE 1
 #define LIGHTS_ARRAY {"lamp mac address", "lamp 2 mac address", "lamp 3 mac address"}
 ```
+
+_NETWORKRANGE is the third block in your private ip (ex: 192.168.**1**.1 vs 192.168.**0**.1)_
 
 # Programming
 
